@@ -12,6 +12,8 @@ import { LabelM } from "../components/typography/label/m";
 import { TextL } from "../components/typography/text/l";
 import { TextM } from "../components/typography/text/m";
 import { Image } from "../components/image";
+import { LinkL } from "@/components/typography/link/body/l";
+import { LinkM } from "../components/typography/link/body/m";
 
 export default function Home() {
   return (
@@ -32,6 +34,8 @@ export default function Home() {
       <div className='w-20'>
       <Image src='/jpg/sample.jpg' alt='sample-image' aspectRatio='16:9' />
       </div>
+      <LinkL href='#'>LinkLLinkLLinkL</LinkL>
+      <LinkM href='#'>LinkMLinkMLinkM</LinkM>
     </main>
   )
 }
