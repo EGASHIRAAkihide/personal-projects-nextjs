@@ -11,12 +11,11 @@ import { LabelL } from "../components/typography/label/l";
 import { LabelM } from "../components/typography/label/m";
 import { TextL } from "../components/typography/text/l";
 import { TextM } from "../components/typography/text/m";
+import { Image } from "../components/image";
 
 export default function Home() {
   return (
     <main>
-      <div className='text-t-body-light'>asdfasdfasdf</div>
-      <div>日本語テスト</div>
       <HeadingXXL>HeadingXXL見出し</HeadingXXL>
       <HeadingXL>HeadingXL見出し</HeadingXL>
       <HeadingL>HeadingL見出し</HeadingL>
@@ -28,8 +27,11 @@ export default function Home() {
       <TextM>TextMテキスト</TextM>
       <LabelL>LabelLラベル</LabelL>
       <LabelM>LabelMラベル</LabelM>
-      <CaptionL>CaptionLキャプション</CaptionL>
-      <CaptionM>CaptionMキャプション</CaptionM>
+      {/* <CaptionL>CaptionLキャプション</CaptionL>
+      <CaptionM>CaptionMキャプション</CaptionM> */}
+      <div className='w-20'>
+      <Image src='/jpg/sample.jpg' alt='sample-image' aspectRatio='16:9' />
+      </div>
     </main>
   )
 }
