@@ -18,6 +18,7 @@ import { LinkL } from "@/components/typography/link/body/l";
 import { LinkM } from "../components/typography/link/body/m";
 import { ButtonPrimary } from "@/components/button/primary";
 import { ButtonSecondary } from "@/components/button/secondary";
+import { ButtonTertiary } from "@/components/button/tertiary";
 
 export default function Home() {
   return (
@@ -42,6 +43,7 @@ export default function Home() {
       <LinkM href='#'>LinkMLinkMLinkM</LinkM>
       <ButtonPrimary text='ボタン' onClick={() => console.log('click')} />
       <ButtonSecondary text='ボタン' onClick={() => console.log('click')} />
+      <ButtonTertiary text='ボタン' onClick={() => console.log('click')} />
     </main>
   )
 }
