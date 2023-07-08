@@ -1,49 +1,68 @@
 'use client'
 
-import { CaptionL } from "../components/typography/caption/l";
-import { CaptionM } from "../components/typography/caption/m";
-import { HeadingL } from "../components/typography/heading/l";
-import { HeadingM } from "../components/typography/heading/m";
-import { HeadingS } from "../components/typography/heading/s";
-import { HeadingXL } from "../components/typography/heading/xl";
-import { HeadingXS } from "../components/typography/heading/xs";
-import { HeadingXXL } from "../components/typography/heading/xxl";
-import { HeadingXXS } from "../components/typography/heading/xxs";
-import { LabelL } from "../components/typography/label/l";
-import { LabelM } from "../components/typography/label/m";
-import { TextL } from "../components/typography/text/l";
-import { TextM } from "../components/typography/text/m";
-import { Image } from "../components/image";
-import { LinkL } from "@/components/typography/link/body/l";
-import { LinkM } from "../components/typography/link/body/m";
-import { ButtonPrimary } from "@/components/button/primary";
-import { ButtonSecondary } from "@/components/button/secondary";
-import { ButtonTertiary } from "@/components/button/tertiary";
+import { Table } from "@/components/table";
+import { TableTBody } from "@/components/table/tbody";
+import { TableTd } from "@/components/table/td";
+import { TableTh } from "@/components/table/th";
+import { TableTHead } from "@/components/table/thead";
+import { TableTr } from "@/components/table/tr";
+
+const TableHeadData = [
+  'Name',
+  'Email',
+  'Salary',
+  'Birth Date',
+  'Status',
+  'Actions'
+];
+
+const TableBodyData = [
+  {
+    name: 'John Doe',
+    email: 'email@gmail.com',
+    salary: '$2000',
+    birthDate: '2022-01-01',
+    status: 'active',
+    actions: 'actions'
+  },
+  {
+    name: 'John Doe',
+    email: 'email@gmail.com',
+    salary: '$2000',
+    birthDate: '2022-01-01',
+    status: 'active',
+    actions: 'actions'
+  }
+]
 
 export default function Home() {
   return (
-    <main>
-      <HeadingXXL>HeadingXXL見出し</HeadingXXL>
-      <HeadingXL>HeadingXL見出し</HeadingXL>
-      <HeadingL>HeadingL見出し</HeadingL>
-      <HeadingM>HeadingM見出し</HeadingM>
-      <HeadingS>HeadingS見出し</HeadingS>
-      <HeadingXS>HeadingXS見出し</HeadingXS>
-      <HeadingXXS>HeadingXXS見出し</HeadingXXS>
-      <TextL>TextLテキスト</TextL>
-      <TextM>TextMテキスト</TextM>
-      <LabelL>LabelLラベル</LabelL>
-      <LabelM>LabelMラベル</LabelM>
-      {/* <CaptionL>CaptionLキャプション</CaptionL>
-      <CaptionM>CaptionMキャプション</CaptionM> */}
-      <div className='w-20'>
-      <Image src='/jpg/sample.jpg' alt='sample-image' aspectRatio='16:9' />
-      </div>
-      <LinkL href='#'>LinkLLinkLLinkL</LinkL>
-      <LinkM href='#'>LinkMLinkMLinkM</LinkM>
-      <ButtonPrimary text='ボタン' onClick={() => console.log('click')} />
-      <ButtonSecondary text='ボタン' onClick={() => console.log('click')} />
-      <ButtonTertiary text='ボタン' onClick={() => console.log('click')} />
+    <main className='container mx-auto my-0'>
+      <Table>
+        <TableTHead>
+          <TableTr isTableHead>
+            {TableHeadData.map((item, index) => (
+              <TableTh key={index}>
+                {item}
+              </TableTh>
+            ))}
+          </TableTr>
+        </TableTHead>
+        <TableTBody>
+          {TableBodyData.map((item, index) => (
+            <TableTr key={index} isRowEven={(index + 1) % 2 === 0}>
+              <TableTd>
+                {item.name}
+              </TableTd>
+              <TableTd>{item.email}</TableTd>
+              <TableTd>{item.salary}</TableTd>
+              <TableTd>{item.birthDate}</TableTd>
+              <TableTd>{item.status}</TableTd>
+              <TableTd>{item.actions}</TableTd>
+            </TableTr>
+          ))}
+        </TableTBody>
+      </Table>
     </main>
   )
 }
