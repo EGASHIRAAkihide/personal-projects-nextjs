@@ -176,6 +176,9 @@ module.exports = {
         DEFAULT: '#1A1A1C',
         dark: '#FFFFFF',
       },
+      'sea': {
+        50: '#E8F1FE',
+      }
     }
   },
   plugins: [],

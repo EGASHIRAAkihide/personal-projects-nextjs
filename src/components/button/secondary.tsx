@@ -9,7 +9,7 @@ type Props = {
   value?: string;
 }
 
-export function ButtonPrimary({
+export function ButtonSecondary({
   disabled = false,
   name,
   onClick,
@@ -24,19 +24,14 @@ export function ButtonPrimary({
     type={type}
     value={value}
     className='
-    bg-btn-normal-light dark:bg-btn-normal-dark
-    focus:bg-btn-normal-light dark:focus:bg-btn-normal-dark
-    focus:outline
-    focus:outline-2
-    hover:bg-btn-hover-light dark:hover:bg-btn-hover-dark
-    active:bg-btn-active-light dark:active:bg-btn-active-dark
-    disabled:bg-btn-disabled-light dark:disabled:bg-btn-disabled-dark
+    border border-btn-normal-light text-btn-normal-light
+    hover:border-btn-hover-light hover:text-btn-hover-light hover:bg-sea-50
+    active:border-btn-active-light active:text-btn-active-light active:bg-sea-50
+    focus:border-2 focus:border-bd-focused-light
+    disabled:border-btn-disabled-light disabled:text-btn-disabled-light
     h-[56px]
     p-4
-    outline-offset-2
-    outline-bd-focused
     rounded-lg
-    text-t-on-fill
     transition-all
     w-full'
   >{text}</button>
