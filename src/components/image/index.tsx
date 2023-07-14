@@ -3,15 +3,24 @@ import { default as NextImage } from 'next/image';
 type AspectRatioType = '16:9' | '4:3' | '1:1' | 'auto';
 
 type Props = {
+  /** 
+   * image source(URL)
+  */
   src: string;
+  /**
+   * image caption
+   */
   alt: string;
+  /**
+   * aspect ratio
+   */
   aspectRatio: AspectRatioType;
 }
 
 export function Image({
   src,
   alt,
-  aspectRatio = 'auto'
+  aspectRatio = '16:9'
 }: Props) {
   return (
     <div className={`
